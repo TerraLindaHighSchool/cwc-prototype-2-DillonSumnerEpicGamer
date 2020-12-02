@@ -16,9 +16,14 @@ public class DestroyOutofBounds : MonoBehaviour
     void Update()
     {
         //deletes the object once player cannot see them
-        if (transform.position.z > topBounds || transform.position.z < lowerBounds)
+        if (transform.position.z > topBounds)
         {
             Destroy(gameObject);
+        }
+        else if (transform.position.z < lowerBounds)
+        {
+            Destroy(gameObject);
+            Debug.Log("GameOver Idiot");
         }
     }
 }
